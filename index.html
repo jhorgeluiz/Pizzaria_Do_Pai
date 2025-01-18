@@ -29,6 +29,10 @@
                 justify-content: space-around;
                 padding: 10px;
             }
+            a {
+                text-decoration: none;
+                color: black;
+            }
             article {
                 background-color: #F6A82E;
                 padding: 10px;
@@ -103,13 +107,46 @@
                 font-size: 18px;
                 font-weight: bolder;
             }
-            button {
+            .btn_pedir {
                 background-color: #F6A82E;
                 border-radius: 10px;
                 border-style: none;
                 font-weight: bolder;
                 padding: 8px;
                 width: 80px;
+            }
+            .cont_botao_ir_topo {
+                /* display: flex;
+                justify-content: end;
+                position: relative; */
+                
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                z-index: 100;
+                display: none;
+                justify-content: center;
+                align-items: center;
+                width: 50px;
+                height: 50px;
+                background-color: orange;
+                border-radius: 50%;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+                transition: opacity 0.3s ease, transform 0.3s ease;
+                cursor: pointer;
+            }
+
+            
+            
+            .btn_ir_topo a {
+                background-color: #F6A82E;
+                border-radius: 50px;
+                border-style: none;
+                font-weight: bolder;
+                font-size: 20px;
+                padding: 8px;
+                width: 50px;
+                height: 50px;
             }
             img {
                 background-color: #aaaaaa;
@@ -129,17 +166,18 @@
     </style>
 </head>
 <body>
-    <header class="titulo_principal">
+    <header id="topo" class="titulo_principal">
         <h1></h1>
     </header>
     <nav>
-        <article>Pizza</article>
-        <article>Hamburgue</article>
-        <article>Espetinho</article>
+        <a href="#pizza"><article>Pizza</article></a>
+        <a href="#hamburguer"><article>Hamburgue</article></a>
+        <a href="#espeto"><article>Espetinho</article></a>
     </nav>
-    
-    <main>
-        <h1 class="titulo_cardapio">Cardápio</h1>
+
+    <h1 class="titulo_cardapio">Cardápio</h1>
+
+    <main id="pizzas">
         <h2 class="subtitulo">Pizzas Salgadas</h2>
         <section class="menu-item" data-item="Pizza Margherita">
             <div class="cont_img_titulo">
@@ -152,7 +190,7 @@
             <div class="cont_preco_botao">
                 <p class="preco_antigo">De: R$30,00</p>
                 <p class="preco_novo">Por: R$25,00</p>
-                <button onclick="pedir('Pizza Margherita')">Pedir</button>
+                <button class="btn_pedir" onclick="pedir('Pizza Margherita')">Pedir</button>
             </div>
         </section>
 
@@ -168,7 +206,7 @@
             <div class="cont_preco_botao">
                 <p class="preco_antigo">De: R$30,00</p>
                 <p class="preco_novo">Por: R$25,00</p>
-                <button onclick="pedir('Hambúrguer')">Pedir</button>
+                <button class="btn_pedir" onclick="pedir('Hambúrguer')">Pedir</button>
             </div>
         </section>
 
@@ -183,7 +221,7 @@
             <div class="cont_preco_botao">
                 <p class="preco_antigo">De: R$30,00</p>
                 <p class="preco_novo">Por: R$25,00</p>
-                <button onclick="pedir('Salada Caesar')">Pedir</button>
+                <button class="btn_pedir" onclick="pedir('Salada Caesar')">Pedir</button>
             </div>
         </section>
 
@@ -200,7 +238,7 @@
             <div class="cont_preco_botao">
                 <p class="preco_antigo">De: R$30,00</p>
                 <p class="preco_novo">Por: R$25,00</p>
-                <button onclick="pedir('Pizza Margherita')">Pedir</button>
+                <button class="btn_pedir" onclick="pedir('Pizza Margherita')">Pedir</button>
             </div>
         </section>
 
@@ -215,7 +253,7 @@
             <div class="cont_preco_botao">
                 <p class="preco_antigo">De: R$30,00</p>
                 <p class="preco_novo">Por: R$25,00</p>
-                <button onclick="pedir('Hambúrguer')">Pedir</button>
+                <button class="btn_pedir" onclick="pedir('Hambúrguer')">Pedir</button>
             </div>
         </section>
 
@@ -230,16 +268,129 @@
             <div class="cont_preco_botao">
                 <p class="preco_antigo">De: R$30,00</p>
                 <p class="preco_novo">Por: R$25,00</p>
-                <button onclick="pedir('Salada Caesar')">Pedir</button>
+                <button class="btn_pedir" onclick="pedir('Salada Caesar')">Pedir</button>
             </div>
         </section>
     </main>
+    <main id="hamburguer">
+        <h2 class="subtitulo">Hamburguer</h2>
+        <section class="menu-item" data-item="Pizza Margherita">
+            <div class="cont_img_titulo">
+                <img src="./imagens/hamburgue.png" alt="">
+                <div>
+                    <h2 class="titulo_dentrodasection">Hamburguer de frango grelhado</h2>
+                    <h3 class="ingredientes">Frango,Pão,Queijo,Alface,Tomate,Cebola,Bacon,Molho,</h3>
+                </div>
+            </div>
+            <div class="cont_preco_botao">
+                <p class="preco_antigo">De: R$30,00</p>
+                <p class="preco_novo">Por: R$25,00</p>
+                <button class="btn_pedir" onclick="pedir('Pizza Margherita')">Pedir</button>
+            </div>
+        </section>
+
+        <section class="menu-item" data-item="Hambúrguer">
+            <div class="cont_img_titulo">
+                <img src="./imagens/hamburgue.png" alt="">
+                <div>
+                    <h2 class="titulo_dentrodasection">Hamburguer de frango grelhado + Guaraná 350ml</h2>
+                    <h3 class="ingredientes">Frango,Pão,Queijo,Alface,Tomate,Cebola,Bacon,Molho,</h3>
+                </div>
+            </div>
+            <div class="cont_preco_botao">
+                <p class="preco_antigo">De: R$30,00</p>
+                <p class="preco_novo">Por: R$25,00</p>
+                <button class="btn_pedir" onclick="pedir('Hambúrguer')">Pedir</button>
+            </div>
+        </section>
+
+        <section class="menu-item" data-item="Salada Caesar">
+            <div class="cont_img_titulo">
+                <img src="./imagens/hamburgue.png" alt="">
+                <div>
+                    <h2 class="titulo_dentrodasection">Hamburguer de frango grelhado</h2>
+                    <h3 class="ingredientes">Frango,Pão,Queijo,Alface,Tomate,Cebola,Bacon,Molho,</h3>
+                </div>
+            </div>
+            <div class="cont_preco_botao">
+                <p class="preco_antigo">De: R$30,00</p>
+                <p class="preco_novo">Por: R$25,00</p>
+                <button class="btn_pedir" onclick="pedir('Salada Caesar')">Pedir</button>
+            </div>
+        </section>
+        
+    </main>
+    <main id="espeto">
+        <h2 class="subtitulo">Espetinhos</h2>
+        <section class="menu-item" data-item="Pizza Margherita">
+            <div class="cont_img_titulo">
+                <img src="./imagens/espeto.png" alt="">
+                <div>
+                    <h2 class="titulo_dentrodasection">Espeto de Frango</h2>
+                    <!-- <h3 class="ingredientes">Frango,Pão,Queijo,Alface,Tomate,Cebola,Bacon,Molho,</h3> -->
+                </div>
+            </div>
+            <div class="cont_preco_botao">
+                <p class="preco_antigo">De: R$30,00</p>
+                <p class="preco_novo">Por: R$25,00</p>
+                <button class="btn_pedir" onclick="pedir('Pizza Margherita')">Pedir</button>
+            </div>
+        </section>
+
+        <section class="menu-item" data-item="Hambúrguer">
+            <div class="cont_img_titulo">
+                <img src="./imagens/espeto.png" alt="">
+                <div>
+                    <h2 class="titulo_dentrodasection">Espeto Carne Bovina</h2>
+                    <!-- <h3 class="ingredientes">Frango,Pão,Queijo,Alface,Tomate,Cebola,Bacon,Molho,</h3> -->
+                </div>
+            </div>
+            <div class="cont_preco_botao">
+                <p class="preco_antigo">De: R$30,00</p>
+                <p class="preco_novo">Por: R$25,00</p>
+                <button class="btn_pedir" onclick="pedir('Hambúrguer')">Pedir</button>
+            </div>
+        </section>
+
+        <section class="menu-item" data-item="Salada Caesar">
+            <div class="cont_img_titulo">
+                <img src="./imagens/espeto.png" alt="">
+                <div>
+                    <h2 class="titulo_dentrodasection">Espeto Carne Suína</h2>
+                    <!-- <h3 class="ingredientes">Frango,Pão,Queijo,Alface,Tomate,Cebola,Bacon,Molho,</h3> -->
+                </div>
+            </div>
+            <div class="cont_preco_botao">
+                <p class="preco_antigo">De: R$30,00</p>
+                <p class="preco_novo">Por: R$25,00</p>
+                <button class="btn_pedir" onclick="pedir('Salada Caesar')">Pedir</button>
+            </div>
+        </section>
+    </main>
+
+    <div id="cont_botao_ir_topo" class="cont_botao_ir_topo">
+        <a href="#topo" class="btn_ir_topo">&#x21e7;</a>
+    </div>
 
     <footer>
         <p>Direitos reservados</p>
     </footer>
     
     <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        const botao_flutuante = document.getElementById("cont_botao_ir_topo")
+
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 100) {
+                botao_flutuante.classList.add("cont_botao_ir_topo")
+                botao_flutuante.style.display = 'flex'
+                } else {
+                botao_flutuante.classList.remove("cont_botao_ir_topo")
+                }
+            })
+        })
+
+
         function pedir(item) {
             const ordem = {
                 item: item,
