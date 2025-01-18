@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .pedido {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+        }
+        .pedido button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pedidos</h1>
+    <div id="pedidosContainer"></div>
+    
+    <script>
+        function pedidos() {
+            let ordens = JSON.parse(localStorage.getItem('ordens')) || []
+            const pedidosContainer = document.getElementById('pedidosContainer')
+            pedidosContainer.innerHTML = ''
+            ordens.forEach((pedido, index) => {
+                const pedidoElement = document.createElement('div')
+                pedidoElement.classList.add('pedido')
+                pedidoElement.innerHTML = `
+                    <p>Item: ${pedido.item}</p>
+                    <p>Horário: ${new Date(pedido.timestamp).toLocaleString()}</p>
+                    <button onclick="imprimirpedido('${pedido.item}', ${index})">Imprimir</button>
+                `
+                pedidosContainer.appendChild(pedidoElement)
+            })
+        }
+
+        function imprimirpedido(item, index) {
+            alert(`Imprimindo pedido: ${item}`)
+            let ordens = JSON.parse(localStorage.getItem('ordens')) || []
+            ordens.splice(index, 1)
+            localStorage.setItem('ordens', JSON.stringify(ordens))
+            pedidos()
+        }
+
+        setInterval(pedidos, 5000)
+        pedidos()
+    </script>
+</body>
+</html>
+

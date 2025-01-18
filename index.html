@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <style>
+        @media screen and (min-width: 360px) and (max-width: 768px) {
+            * {
+                margin: 0px;
+                padding: 0px;
+            }
+
+            body {
+                background-color: #2b2b2b;
+            }
+
+            header {
+                background-color: #F6A82E;
+            }
+
+            nav {
+                background-image: linear-gradient(to top, #f6a92e60, transparent);
+                display: flex;
+                justify-content: space-around;
+                padding: 10px;
+            }
+            article {
+                background-color: #F6A82E;
+                padding: 10px;
+                border-radius: 10px;
+            }
+
+            .titulo_principal {
+                text-align: center;
+                padding: 10px;
+            }
+            .titulo_cardapio {
+                color: white;
+                text-align: center;
+                padding: 10px;
+            }
+            .subtitulo {
+                background-color: #f6a92e88;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                color: white;
+                margin: 50px 20px 0px 20px;
+                text-align: center;
+                padding: 10px;
+            }
+            .titulo_dentrodasection {
+                
+                text-align: center;
+                padding: 10px;
+            }
+            .ingredientes {
+                text-align: center;
+                font-size: 10px;
+            }
+            .supercombo {
+                text-align: center;
+            }
+
+            /* main {
+                background-color: blueviolet;
+            } */
+            section {
+                background-color: #d8d8d8;
+                border-radius: 10px;
+                border: 2px solid #F6A82E;
+                padding: 10px;
+                /* margin: 10px; */
+                margin-bottom: 10px;
+            }
+            .cont_img_titulo {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            .cont_preco_botao {
+                background-color: white;
+                border-radius: 10px;
+                margin: 10px;
+                padding: 10px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .preco_antigo {
+                text-decoration: line-through;
+                color: red;
+                font-size: 18px;
+                font-weight: bolder;
+            }
+            .preco_novo {
+                color: #07aa07;
+                font-size: 18px;
+                font-weight: bolder;
+            }
+            button {
+                background-color: #F6A82E;
+                border-radius: 10px;
+                border-style: none;
+                font-weight: bolder;
+                padding: 8px;
+                width: 80px;
+            }
+            img {
+                background-color: #aaaaaa;
+                border-radius: 50px;
+                border: 1px solid #F6A82E;
+                width: 100px;
+                height: 100px;
+            }
+
+            footer {
+                background-color: #101111;
+                color: #F6A82E;
+                text-align: center;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="titulo_principal">Pizzaria <br> Do Pai</h1>
+    </header>
+    <nav>
+        <article>Pizza</article>
+        <article>Hamburgue</article>
+        <article>Espetinho</article>
+    </nav>
+    
+    <main>
+        <h1 class="titulo_cardapio">Cardápio</h1>
+        <h2 class="subtitulo">Pizzas Salgadas</h2>
+        <section class="menu-item" data-item="Pizza Margherita">
+            <div class="cont_img_titulo">
+                <img src="pngwing.com (16).png" alt="">
+                <div>
+                    <h2 class="titulo_dentrodasection">Pizza Margherita</h2>
+                    <h3 class="ingredientes">Ovos, cebola, azeitona, ervilha, queijo e presunto</h3>
+                </div>
+            </div>
+            <div class="cont_preco_botao">
+                <p class="preco_antigo">De: R$30,00</p>
+                <p class="preco_novo">Por: R$25,00</p>
+                <button onclick="pedir('Pizza Margherita')">Pedir</button>
+            </div>
+        </section>
+
+        <section class="menu-item" data-item="Hambúrguer">
+            <div class="cont_img_titulo">
+                <img src="pngwing.com (16).png" alt="">
+                <div>
+                    <h2 class="supercombo">Super Combo</h2>
+                    <h2 class="titulo_dentrodasection">Pizza Portuguesa + Guaraná 1l</h2>
+                    <h3 class="ingredientes">Ovos, cebola, azeitona, ervilha, queijo e presunto</h3>
+                </div>
+            </div>
+            <div class="cont_preco_botao">
+                <p class="preco_antigo">De: R$30,00</p>
+                <p class="preco_novo">Por: R$25,00</p>
+                <button onclick="pedir('Hambúrguer')">Pedir</button>
+            </div>
+        </section>
+
+        <section class="menu-item" data-item="Salada Caesar">
+            <div class="cont_img_titulo">
+                <img src="pngwing.com (16).png" alt="">
+                <div>
+                    <h2 class="titulo_dentrodasection">Pizza Calabresa</h2>
+                    <h3 class="ingredientes">Ovos, cebola, azeitona, ervilha, queijo e presunto</h3>
+                </div>
+            </div>
+            <div class="cont_preco_botao">
+                <p class="preco_antigo">De: R$30,00</p>
+                <p class="preco_novo">Por: R$25,00</p>
+                <button onclick="pedir('Salada Caesar')">Pedir</button>
+            </div>
+        </section>
+
+
+        <h2 class="subtitulo">Pizzas Doce</h2>
+        <section class="menu-item" data-item="Pizza Margherita">
+            <div class="cont_img_titulo">
+                <img src="pngwing.com (16).png" alt="">
+                <div>
+                    <h2 class="titulo_dentrodasection">Pizza Margherita</h2>
+                    <h3 class="ingredientes">Ovos, cebola, azeitona, ervilha, queijo e presunto</h3>
+                </div>
+            </div>
+            <div class="cont_preco_botao">
+                <p class="preco_antigo">De: R$30,00</p>
+                <p class="preco_novo">Por: R$25,00</p>
+                <button onclick="pedir('Pizza Margherita')">Pedir</button>
+            </div>
+        </section>
+
+        <section class="menu-item" data-item="Hambúrguer">
+            <div class="cont_img_titulo">
+                <img src="pngwing.com (16).png" alt="">
+                <div>
+                    <h2 class="titulo_dentrodasection">Pizza Portuguesa + Guaraná 1l</h2>
+                    <h3 class="ingredientes">Ovos, cebola, azeitona, ervilha, queijo e presunto</h3>
+                </div>
+            </div>
+            <div class="cont_preco_botao">
+                <p class="preco_antigo">De: R$30,00</p>
+                <p class="preco_novo">Por: R$25,00</p>
+                <button onclick="pedir('Hambúrguer')">Pedir</button>
+            </div>
+        </section>
+
+        <section class="menu-item" data-item="Salada Caesar">
+            <div class="cont_img_titulo">
+                <img src="pngwing.com (16).png" alt="">
+                <div>
+                    <h2 class="titulo_dentrodasection">Pizza Calabresa</h2>
+                    <h3 class="ingredientes">Ovos, cebola, azeitona, ervilha, queijo e presunto</h3>
+                </div>
+            </div>
+            <div class="cont_preco_botao">
+                <p class="preco_antigo">De: R$30,00</p>
+                <p class="preco_novo">Por: R$25,00</p>
+                <button onclick="pedir('Salada Caesar')">Pedir</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Direitos reservados</p>
+    </footer>
+    
+    <script>
+        function pedir(item) {
+            const ordem = {
+                item: item,
+                timestamp: new Date().toISOString()
+            }
+            let ordens = JSON.parse(localStorage.getItem('ordens')) || []
+            ordens.push(ordem)
+            localStorage.setItem('ordens', JSON.stringify(ordens))
+            alert('Pedido enviado!')
+        }
+    </script>
+</body>
+</html>
+
